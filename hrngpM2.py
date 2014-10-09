@@ -41,10 +41,6 @@ def main():
         posx.h = '{cnt} - {idx}'.format(cnt=1, idx=idx)
     infoList.append('After 5 vnode creates: {0}'.format(leoG.app.nodeIndices.lastIndex))
 
-    rp = cmdrx.rootPosition()
-    cmdrx.selectPosition(rp)
-    cmdrx.executeMinibufferCommand('sort-siblings')
-
     again = True
     while again:
         again = False
@@ -58,8 +54,9 @@ def main():
     cmdrx.save()
     cmdrx.close()
 
-    returnCode = subprocess.call(['python', 'hrngpS2.py', fpn1])
-    infoList.append('subprocess return code = {0}'.format(returnCode))
+    if True:
+        returnCode = subprocess.call(['python', 'hrngpS2.py', fpn1])
+        infoList.append('subprocess return code = {0}'.format(returnCode))
 
     fpnError = os.path.join(TestDir, 'MasterLog.txt')
     fdError = open(fpnError, 'w')

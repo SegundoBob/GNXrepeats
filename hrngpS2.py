@@ -12,7 +12,7 @@ import sys
 
 import leo.core.leoBridge as leoBridge
 
-import lib_leo03
+from leo_lib import lib_leo03
 
 #@+others
 #@+node:bob07.20140715160011.1576: ** gnxRepeats()
@@ -50,6 +50,8 @@ def main():
     infoList.append('After adding 1 vnode: {idx}'.format(fpn=fpn1, idx=leoG.app.nodeIndices.lastIndex))
 
     gnxRepeats(cmdr1, infoList)
+    cmdr1.save()
+    cmdr1.close()
 
     fpnError = os.path.join(TestDir, 'SlaveLog.txt')
     fdError = open(fpnError, 'w')
